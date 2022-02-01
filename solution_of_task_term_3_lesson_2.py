@@ -1,0 +1,5 @@
+print("Решите пример: {0} ".format("4 * 100 - 54"))
+solution = int(input("Ваш ответ: "))
+print("Ваш ответ: %d" % (solution))
+print("Правильный ответ: %d" % (4 * 100 - 54))
+print("Ваш ответ: %d" % (solution))
