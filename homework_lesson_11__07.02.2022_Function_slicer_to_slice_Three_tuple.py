@@ -28,10 +28,10 @@ print("Задание 2: 1 - кортеж от 0 до 5, 2 - кортеж от -
       "Обьединить кортеж с помощью операции + в Кортеж 3. С помощью метода кортежа count() определить количество 0 в 3 Кортеже"
       "Вывести 3 Кортеж и Количество 0")
 
-s1 = [randint(0, 5) for i in range(10)]
-s2 = [randint(-5, 0) for i in range(10)]
-t1 = tuple(s1)
-t2 = tuple(s2)
+t1 = [randint(0, 5) for i in range(10)]
+t2 = [randint(-5, 0) for i in range(10)]
+# t1 = tuple(s1)
+# t2 = tuple(s2)
 t3 = t1 + t2
 print(t3)
 print(t3.count(0))
