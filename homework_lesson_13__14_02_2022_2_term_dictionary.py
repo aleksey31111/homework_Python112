@@ -16,7 +16,7 @@ print()
 
 ### Term 2 ###
 print("Задание 2: Переименовать Ключ city в location, в типе данных Словарь")
-employee = {'Name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+employee = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
 employee.pop('city')  # = 'location'
 employee['location'] = 'New York'
 print(employee)
