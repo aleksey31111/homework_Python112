@@ -19,6 +19,8 @@ print("Задание 3: Из 2 Списков Данных Создать Но�
 suit_keys = ['color', 'fruit', 'pet']
 suit_values = ['blue', 'apple', 'dog']
 print(dict(zip(suit_keys, suit_values)))
+print()
+print()
 ### Term 4 ###
 print("Задание 4: Создать функцию минимального числа, произвольного количесива чисел")
 
@@ -30,41 +32,82 @@ def minimal_namber(*args):
     return min(args)
 
 
+for i in (10, 9):
+    print(i, end=" ")
+print()
+for i in (2, 3, 4):
+    print(i, end=" ")
+print()
+for i in (3, 5, 10, 6):
+    print(i, end=" ")
+print()
+print()
 print(minimal_namber(10, 9))
 print(minimal_namber(2, 3, 4))
 print(minimal_namber(3, 5, 10, 6))
-
+print()
+print()
 ### Term 5 ###
 print("Задание 5: Найти сумму элементов, предыдущего значения с текущим, произвольного количества Элементов. ")
 
 
+## First Variant without Cicle ##
+
 def sum_nambers(*args):
-    # print(len(args))
     nambers = list()
-    length = len(args)
     itr = iter(args)
-    # if len(args) == 1:
-    #     a = next(itr)
-    a = next(itr)
+    a = next(itr)  # 1
     nambers.append(a)
-    # while length < 0:
-    #     b =
-    nambers.append(a + next(itr))
-    # nambers.append(a + next(itr))
-    # nambers.append(a + next(itr))
-    # nambers.append(a + next(itr))
-    # nambers.append(a + next(itr))
-    # length -= 1
-    # for i in len(args):
-    #     if len(args) ==1:
-    #         a = next(itr)
-    #         args.append(a)
-    #     elif len(args) > 1:
-    #         b = a + next(itr)
-    #         args.append(b)
+    b = a + next(itr)  # 2
+    nambers.append(b)
+    c = b + next(itr, "STOP")  # 3
+    nambers.append(c)
+    if len(args) > 3:
+        d = c + next(itr, "STOP")  # 4
+        nambers.append(d)
+        if len(args) > 4:
+            e = d + next(itr, "STOP")
+            nambers.append(e)
     return nambers
 
 
-print(sum_nambers(3, 9, 1))
-print(sum_nambers(2, 5, 4, 2))
-print(sum_nambers(3, 5, 10, 6, 3))
+for i in [3, 9, 1]:
+    print(i, end=" ")
+print()
+for i in [2, 5, 4, 2]:
+    print(i, end=" ")
+print()
+for i in [3, 5, 10, 6, 3]:
+    print(i, end=" ")
+print()
+print()
+for i in sum_nambers(3, 9, 1):
+    print(i, end=" ")
+print()
+for i in sum_nambers(2, 5, 4, 2):
+    print(i, end=" ")
+print()
+for i in sum_nambers(3, 5, 10, 6, 3):
+    print(i, end=" ")
+# print(sum_nambers(3, 9, 1))
+# print(sum_nambers(2, 5, 4, 2))
+# print(sum_nambers(3, 5, 10, 6, 3))
+
+# ## Second Variant Via while ## NOT WORKING
+# def sum_nambers(*args):
+#     print(len(args))
+#     nambers = list()
+#     length = len(args)
+#     while length == length:
+#         # itr = iter(args)
+#         nambers.append(next(iter(args)))
+#         length -= 1
+#     while length != length and length > 0:
+#         nambers.append(args[0] + next(iter(args)))
+#         length -= 1
+#         return nambers
+#
+#
+# print(sum_nambers(3, 9, 1))
+# print(sum_nambers(2, 5, 4, 2))
+# print(sum_nambers(3, 5, 10, 6, 3))
