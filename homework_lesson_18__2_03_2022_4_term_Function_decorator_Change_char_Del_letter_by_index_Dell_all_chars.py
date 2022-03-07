@@ -1,38 +1,42 @@
 ### Term 1: ###
-# print("Задание 1: "
-#       "Создать ФУНКЦИЮб которая будет Находить СУММУ любого количества ЧИСЕЛ и"
-#       "ДЕКОРАТОРБ который будет находить СРЕДНЕЕ АРИФМЕТИЧЕСКОЕ Этих ЧИСЕЛ.")
-#
-# def decor_average(*args):
-#     # length_num = len(args)
-#     # print(num)
-#     # num = list(map(lambda average: ))
-#     # for i in args:
-#     # sum_nam = sum(args)
-#
-#     def wrapper(func):
-#         sum_nam = sum(args)
-#         # global s
-#         def wrap(*f_args):
-#             global sum_nam, average_nam
-#             # sum_nam = sum(f_args)
-#             average_nam = sum(args) / len(args)
-#             return average_nam, sum_nam
-#
-#         return wrap
-#
-#     return wrapper
-#
-#
-# @decor_average(2, 3, 3, 4)
-# def func_sum(*f_args):
-#     # sum_nam = sum(f_args)
-#     print("Сумма чисел", f_args, "=", sum_nam, "\n",
-#           "Среднее аривметическое чисел",
-#           decor_average(), "=", average_nam)
-#
-#
-# print(func_sum(2, 3, 3, 4))
+print("Задание 1: "
+      "Создать ФУНКЦИЮб которая будет Находить СУММУ любого количества ЧИСЕЛ и"
+      "ДЕКОРАТОРБ который будет находить СРЕДНЕЕ АРИФМЕТИЧЕСКОЕ Этих ЧИСЕЛ.")
+
+
+def decor_average(*args):
+    # length_num = len(args)
+    # print(num)
+    # num = list(map(lambda average: ))
+    # for i in args:
+    # sum_nam = sum(args)
+
+    def wrapper(func):
+        sum_nam = sum(args)
+
+        # global s
+        def wrap(*f_args):
+            nonlocal
+            sum_nam  #, average_nam
+            # sum_nam = sum(f_args)
+            average_nam = sum(args) / len(args)
+            # return average_nam, sum_nam
+            return func(args)
+
+        return wrap
+
+    return wrapper
+
+
+@decor_average(2, 3, 3, 4)
+def func_sum(*f_args):
+    # sum_nam = sum(f_args)
+    print("Сумма чисел", f_args, "=", sum_nam, "\n",
+          "Среднее аривметическое чисел",
+    decor_average(), "=", average_nam)
+
+
+print(func_sum(2, 3, 3, 4))
 
 ### Term 2: ###
 print("Задание 2: Замена СИМВОЛА на ДРУГОЙ СИМВОЛ в СТРОКЕ на ЧЕТНЫХ ПОЗИЦИЯХ.")
