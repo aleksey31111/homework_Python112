@@ -5,23 +5,12 @@ print("Задание 1: "
 
 
 def decor_average(*args):
-    # length_num = len(args)
-    # print(num)
-    # num = list(map(lambda average: ))
-    # for i in args:
-    # sum_nam = sum(args)
-
     def wrapper(func):
-        sum_nam = sum(args)
-
-        # global s
         def wrap(*f_args):
-            nonlocal
-            sum_nam  #, average_nam
-            # sum_nam = sum(f_args)
-            average_nam = sum(args) / len(args)
-            # return average_nam, sum_nam
-            return func(args)
+            sum_nam = sum(f_args)
+            average_nam = sum_nam / len(args)
+            print("Сумма чисел", *f_args, "=", sum_nam)
+            print("Среднее аривметическое чисел", *args, "=", average_nam)
 
         return wrap
 
@@ -30,14 +19,12 @@ def decor_average(*args):
 
 @decor_average(2, 3, 3, 4)
 def func_sum(*f_args):
-    # sum_nam = sum(f_args)
-    print("Сумма чисел", f_args, "=", sum_nam, "\n",
-          "Среднее аривметическое чисел",
-    decor_average(), "=", average_nam)
+    print("Сумма чисел" "Среднее арифметическое")
 
 
 print(func_sum(2, 3, 3, 4))
-
+print()
+print()
 ### Term 2: ###
 print("Задание 2: Замена СИМВОЛА на ДРУГОЙ СИМВОЛ в СТРОКЕ на ЧЕТНЫХ ПОЗИЦИЯХ.")
 
@@ -71,8 +58,6 @@ def del_char(s, simbol):
     for char in range(len(s)):
         if char != simbol:
             buffer_s += s[char]
-    # char = 0
-    # buffer_s = s[:simbol] + s[simbol + 1::]
     return buffer_s
 
 
@@ -98,7 +83,6 @@ def dell_all_occurrences_char(s, characters):
 
 
 str_1 = "012345363738494"
-# print(len(str1))
 str_2 = dell_all_occurrences_char(str_1, "3")
 print("s = " + str_1)
 print("s2 = " + str_2)
