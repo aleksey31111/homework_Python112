@@ -15,31 +15,85 @@ print()
 print("Задание 2: 1) Найти в СТРОКЕ Указанную ПОДСТРОКУ.\n"
       "         2) Заменить ЕЕ на НОВУЮ.\n"
       "СТРОКУ, ЕЕ ПОДСТРОКУ для Замены и НОВУЮ ПОДСТРОКУ Вводит Пользователь.\n")
-# string = input("Строка: ")
-# substring_for_change = input("Ее заменяемая подстрока: ")
-# new_substring = input("Новая подстрока: ")
-string = "11 23 44 55 23 22"
-substring_for_change = "23"
-new_substring = "!!!"
-new_substring_in_string = []
-for world in string:
-    if substring_for_change.find(world) != -1:
-        itr = iter(string)
-        second = next(itr)
-        if second == substring_for_change[1]:
-            new_substring_in_string = string[:substring_for_change.find(world)]+substring_for_change+[substring_for_change.find(world)+1]
-print(new_substring_in_string)
-#     start_index_substring_for_change = string.find(substring_for_change)
-#     start_index_substring_for_change_2 = string.find(substring_for_change, start_index_substring_for_change + 1)
-# index_of_substring = [ind for ind in range(len(string))]
-# print(index_of_substring)
-#     start_index_substring_for_change = string.find(world)
-#     if string[world] == substring_for_change[0]:
-#         print(world)
-# itr = iter(string)
-# print(next(itr))
 
-    # print(world)
-# print(world)
-# print(start_index_substring_for_change)
-# print(start_index_substring_for_change_2)
+
+def change_num(s, new, old):
+    buffer_str_1 = ""
+    char = 0
+    while char < len(s):
+        if s[char] == old[0]:
+            buffer_str_1 += new[0]
+            buffer_str_1 += new[1]
+        elif s[char] == old[1]:
+            buffer_str_1 += new[2]
+        else:
+            buffer_str_1 += s[char]
+
+        char += 1
+
+    return buffer_str_1
+
+
+str1 = "11 23 44 55 23 22"
+str2 = change_num(str1, '!!!', '23')
+print("str1 = " + str1)
+print("str2 = " + str2)
+print()
+print()
+
+# ### Term 3 ###
+print("Задание 3: В СТРОКЕ Содержащей РУСКОЯЗЫЧНЫЙ ТЕКСТ, Найти Количество СЛОВ, Начинаюшихся с БУКВЫ 'е'.")
+piece_of_poetre = (
+    f"Ежевику для ежат"
+    f"Принесли два ежа."
+    f"Ежевику еле-еле"
+    f"Ежата возле ели съели."
+)
+list_piece_of_poetre = list(piece_of_poetre)
+e = "е"
+E = "Е"
+print(e, end=";")
+print(E, end=";")
+ord_e = ord(e)
+ord_E = ord(E)
+print(ord("е"), end=";")
+print(ord("Е"), end=";")
+print(piece_of_poetre.count("Е"), end=";")
+print(piece_of_poetre.count("е"), end=";")
+print(piece_of_poetre.find(e), end=";")
+print(piece_of_poetre.find(E), end=";")
+print(len(piece_of_poetre))
+print(list(filter(lambda start_e: start_e.startswith(e), piece_of_poetre)))
+# for letter_e in piece_of_poetre:
+# number_e = 0
+# for char_e in piece_of_poetre:
+#     # number_e = 0
+# # if ord(piece_of_poetre[char_e]) == ord_e and piece_of_poetre[char_e] == ord_E and char_e - 1 == chr(
+# #         64) or char_e - 1 == chr(10):
+# #     number_e += 1
+# #     if ord(piece_of_poetre[char_e]) == ord_e and piece_of_poetre[char_e] == ord_E and char_e - 1 == chr(
+# #         64) or char_e - 1 == chr(10):
+#     if char_e == e and len(char_e) - 1 != :
+#         number_e += 1
+# print(number_e)
+# char_e = 0
+# while char_e < len(piece_of_poetre):
+#     if ord(piece_of_poetre[char_e]) == ord_e or ord(piece_of_poetre[char_e]) == ord(E)  and \
+#             piece_of_poetre[char_e - 1] != chr(0) and piece_of_poetre[char_e - 1] != chr(64) and \
+#             piece_of_poetre[char_e - 1] != chr(64):
+#         print(char_e, end=";")
+#     char_e += 1
+
+# char_e = 0
+# while char_e < len(piece_of_poetre):
+#     if ord(piece_of_poetre[char_e]) == ord_e:  # and \
+#             # piece_of_poetre[char_e - 1] != chr(0) and piece_of_poetre[char_e - 1] != chr(64) and \
+#             # piece_of_poetre[char_e - 1] != chr(64):
+#         print(piece_of_poetre.find(e))
+#     elif ord(piece_of_poetre[char_e]) == ord(E):
+#         print(piece_of_poetre.find(E))
+#         char_e += 1
+
+# if
+# print(piece_of_poetre.cou)
+# print(number_e)
