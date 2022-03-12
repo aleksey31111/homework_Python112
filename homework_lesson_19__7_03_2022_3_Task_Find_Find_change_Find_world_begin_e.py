@@ -63,3 +63,5 @@ for char_E in range(len(piece_of_poetre)):
         count_E += 1
 print()
 print(f"Количество слов: {count_e + count_E}")
+print()
+print()
