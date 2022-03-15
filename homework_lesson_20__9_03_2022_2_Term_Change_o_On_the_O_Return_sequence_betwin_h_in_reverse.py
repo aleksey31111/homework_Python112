@@ -7,12 +7,12 @@ print("Задание 1:\n"
 str_for_change = input("Введите строку: ")
 reversed_str_for_change = str_for_change[::-1]
 o = "о"
-O = "О"
+o_O = "О"
 pat = o
 slice_o_start = str_for_change[:str_for_change.find(o) + 1]
 slice_o_end = str_for_change[str_for_change.rfind(o):]
 between_start_o_end = str_for_change[str_for_change.find(o) + 1: str_for_change.rfind(o)]
-replace_operate = between_start_o_end.replace(o, O)
+replace_operate = between_start_o_end.replace(o, o_O)
 full_replaced_string = slice_o_start + replace_operate + slice_o_end
 print(full_replaced_string)
 print()
