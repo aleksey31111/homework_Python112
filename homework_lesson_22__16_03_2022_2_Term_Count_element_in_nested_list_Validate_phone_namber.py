@@ -1,27 +1,42 @@
 ### Term 1 ###
 print("Задание 1: Посчитать количество Элементов во ВЛОЖЕННОМ СПИСКЕ,\n \
       Не Используя РЕКУРСИЮ.")
+### Variant 1 ###
 names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
 
 count = 0
 # print(len(names))
 for element in names:
     if len(element[0]) < 2 and element[0].isupper():
-        # print(element)
+        print(element, end=" ")
         count += 1
     else:
         for element1 in element:
             if len(element1[0]) < 2 and element1[0].isupper():
-                # print(element1)
+                print(element1, end=" ")
                 count += 1
             else:
                 for element2 in element1:
                     if len(element2[0]) < 2 and element2[0].isupper():
-                        # print(element2)
+                        print(element2, end=" ")
                         count += 1
 print()
 print(f"Количество Елементов в Списке: {count}")
 print()
+### Variant 2 ###
+print("Выпрямление СПИСКА с Использованием Рекурсии:")
+
+
+def union(s):
+    if not s:  # s == []:
+        return s
+    if isinstance(s[0], list):
+        return union(s[0]) + union(s[1:])
+    return s[:1] + union(s[1:])
+
+
+names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
+print("Выпрямленный СПИСОК: ", union(names))
 
 ### Term 2 ###
 import re
