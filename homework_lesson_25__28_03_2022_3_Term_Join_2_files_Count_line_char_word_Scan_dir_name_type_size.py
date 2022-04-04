@@ -29,7 +29,7 @@ print()
 print("Задание 2: В Текстовом Файле Посчитать количество строк, а\n"\
       "также для Каждой Отдельной Строки Определить Количкство в Ней\n"\
       "СИМВОЛОВ и СЛОВ.")
-import re
+
 text = "Попробуем определить собственный класс.\n" \
        "создать несколько экземпляров этого класса.\n" \
        "Классу возможно задать собственные методы\n" \
@@ -42,37 +42,41 @@ text = "Попробуем определить собственный клас�
         "При этом объекты одного типа сходным образом отвечают на одни и те же запросы.\n"\
         "Объекты могут организовываться в более сложные структуры, например,\n" \
         "включать другие объекты или наследовать от одного или нескольких объектов."
-count_str = 0
-count_char = 0
-count_word = 0
+# count_str = 0
+# count_char = 0
+# count_word = 0
 hw25_task2 = "homework24_task1.txt"
 with open(hw25_task2, 'w') as hw2:
     hw2.write(text)
 
-with open(hw25_task2, 'r') as hw2:
-    rd = hw2.readline()
-    while rd != '':
-        rd = hw2.readline()
-        count_str += 1
+hw2 = open(hw25_task2)
+line = 0
+for count_line in hw2:
+    line += 1
+    flag = 0
+    word = 0
+    for count_word in count_line:
+        if count_word != ' ' and flag == 0:
+            word += 1
+            flag = 1
+        elif count_word == ' ':
+            flag = 0
+    print(count_line, len(count_line), 'симв.', word, 'сл.')
+print(line, 'стр.')
+hw2.close()
 
-    print(f"Количество строк = {count_str}")
-
-f = open(hw25_task2, 'r')
-# for i in f:
-rd = f.readline()
-rds = f.readlines()
-# r = rd.read()
-for rl in rds:
-    # for r in rl:
-    count_word += 1
-    if rl == "\\":
-        print("первая строка ")
-
-# lst = f.readline().split('\n')
-print(rl,end="")
-print("Количество слов в строке: ",count_word)
-f.close()
-        # for ch in w:
-        #     count_char += 1
-        #
-        # print("Количество символов в строке", count_char)
+# with open(hw25_task2, 'r') as hw2:
+#     rd = hw2.readline()
+#     while rd != '':
+#         rd = hw2.readline()
+#         count_str += 1
+#         count_char = 0
+#         count_word = 0
+#         ld = hw2.read()
+#         while ld != '':
+#             if ld != ' ':
+#                 count_word += 1
+#
+#         count_char += 1
+#         print(f"{count_char} симв. {count_word} сл/ ", count_word)
+# print(f"Строка {count_str}")
