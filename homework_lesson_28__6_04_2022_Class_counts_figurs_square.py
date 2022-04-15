@@ -11,8 +11,8 @@ print("Задание: Создать класс Вычисляющий Площ
 class Figures_square:
     count = 0
 
-    def __init__(self, triangle_a, triangle_b, triangle_c,
-                 triangle_base, triangle_height, rectangle_a, rectangle_b):
+    def __init__(self, triangle_a=0, triangle_b=0, triangle_c=0,
+                 triangle_base=0, triangle_height=0, rectangle_a=0, rectangle_b=0):
         self.triangle_a = triangle_a
         self.triangle_b = triangle_b
         self.triangle_c = triangle_c
