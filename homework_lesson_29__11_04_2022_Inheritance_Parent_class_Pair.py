@@ -19,8 +19,14 @@ from math import sqrt
 
 class Pair:
     def __init__(self, A, B):
+        self.verify_pair(A, B)
         self.__a = A
         self.__b = B
+
+    @classmethod
+    def verify_pair(cls, A, B):
+        if not isinstance(A, int) or not isinstance(B, int):
+            raise TypeError("Числа A и B Должны быть Целыми.")
 
     @property
     def a(self):
@@ -57,7 +63,7 @@ class Right_Triangle(Pair):
 
     def info_Right_Triangle(self):
         print(f"Гипотенуза ABC: {self.hypotenuse_Right_Triangle()}\n"
-              f"Прямоугольный треугольник ABC ({self.a, self.b, self.hypotenuse_Right_Triangle()})\n"
+              f"Прямоугольный треугольник ABC {self.a, self.b, self.hypotenuse_Right_Triangle()}\n"
               f"Площадь ABC: {self.square_Right_Triangle()}")
 
 
