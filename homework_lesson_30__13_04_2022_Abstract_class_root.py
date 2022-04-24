@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from math import sqrt
 
+# from cmath import sqrt
+
 ### Task 1 ###
 print("Задание 1:\n"
       "\t1) Создать Базовый Абстракный Класс \"Корень\":\n"
@@ -9,9 +11,10 @@ print("Задание 1:\n"
       "\t2) Реализовать Производные Классы \"Линейное Уравнение\" и \"Квадратное Уравнение\":\n"
       "\t\t2.a - Методы Вычисления Корней;\n"
       "\t\t2.b - Вывод Результатов на Экран;")
+print()
 
 
-class Root:
+class Root(ABC):
     def __init__(self, a, b, c=None):
         if c is None:
             self.a = a
@@ -43,19 +46,19 @@ class Linear(Root):  # 3x +7 = 0
 
 
 class Quadratic(Root):  # x^2 - 2x - 3 = 0
-    def __init__(self, a, b, c):
-        super().__init__(a, b, c)  # (-b + sqrt(d))/2a
-
     def calc_root_quadratic_equation(self):
-        return \
-            (-self.b + sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a, \
-            (-self.b - sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a
+        d = self.b ** 2 - 4 * self.a * self.c
+        root1 = (-self.b + sqrt(abs(d))) / 2 * self.a
+        root2 = (-self.b - sqrt(abs(d))) / 2 * self.a
+        return round(root1, 3), round(root2, 3)
+        # (self.b + sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a, \
+        # (self.b - sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a
 
     #
     def print_root_quadratic_equation(self):
-        print(f"The roots of '1x^2-2x-3=0' is: "
-              f"{(-self.b + sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a}"
-              f"{(-self.b - sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a}")
+        print(f"The roots of '1x^2-2x-3=0' is: {self.calc_root_quadratic_equation()} ")
+        # f"{(self.b + sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a}"
+        # f"{(self.b - sqrt(self.b ** 2 - 4 * self.a * self.c)) / 2 * self.a}")
 
 
 # r = Root
