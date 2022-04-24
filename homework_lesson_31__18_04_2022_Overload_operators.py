@@ -47,7 +47,8 @@ class Clock:
     def __imul__(self, other):
         if not isinstance(other, Clock):
             raise ArithmeticError("Правый Операнд Должен Быть Типом Данных Clock")
-        return Clock(self.__sec * other.get_seconds())
+        self.__sec *= other.get_seconds()
+        return self
 
     def __ifloordiv__(self, other):
         if not isinstance(other, Clock):
@@ -57,7 +58,9 @@ class Clock:
     def __imod__(self, other):
         if not isinstance(other, Clock):
             raise ArithmeticError("Правый Операнд Должен Быть Типом Данных Clock")
-        return Clock(self.__sec % other.get_seconds())
+        self.__sec %= other.get_seconds()
+        return self
+
 
 
 c1 = Clock(600)
