@@ -13,18 +13,24 @@ class Point3D:
         self.__y = y
         self.__z = z
 
-    def get_format_coord(self):
+    def get_format_coords(self):
         z = self.__z
         y = self.__y
         x = self.__x
-        return f"{Point3D.__get_form(x)} : {Point3D.__get_form(y)} : {Point3D.__get_form(z)}"
+        return f"{Point3D.__get_form(x)}, {Point3D.__get_form(y)}, {Point3D.__get_form(z)}"
 
     @staticmethod
     def __get_form(x):
         return str(x)
 
-    def get_way(self):
-        return self.__go
+    def get_x(self):
+        return self.__x
+
+    def get_y(self):
+        return self.__y
+
+    def get_z(self):
+        return self.__z
 
     def __add__(self, other):
         if not isinstance(other, Point3D):
@@ -32,11 +38,41 @@ class Point3D:
 
         return self.__x + other.__x, self.__y + other.__y, self.__z + other.__z
 
+    def __sub__(self, other):
+        if not isinstance(other, Point3D):
+            raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
 
+        return self.__x - other.__x, self.__y - other.__y, self.__z - other.__z
 
-p3d = Point3D(12, 1, 10)
-p3d1 = Point3D(1, 12, 3)
-print(p3d.get_format_coord())
-print(p3d1.get_format_coord())
-sum_p3d = p3d + p3d1
-print(sum_p3d)
+    def __mul__(self, other):
+        if not isinstance(other, Point3D):
+            raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
+
+        return self.__x * other.__x, self.__y * other.__y, self.__z * other.__z
+
+    def __truediv__(self, other):
+        if not isinstance(other, Point3D):
+            raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
+
+        return self.__x / other.__x, self.__y / other.__y, self.__z / other.__z
+
+    def __eq__(self, other):
+        if not isinstance(other, Point3D):
+            raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
+
+        return self.__x == other.__x  # , self.__y == other.__y, self.__z == other.__z
+
+p3d1 = Point3D(12, 15, 18)
+p3d2 = Point3D(6, 3, 9)
+print(f"Координаты 1-й точки: {p3d1.get_format_coords()}")
+print(f"Координаты 2-й точки: {p3d2.get_format_coords()}")
+sum_p3d = p3d1 + p3d2
+print(f"Сложение координат: {sum_p3d}")
+sub_p3d = p3d1 - p3d2
+print(f"Вычитание координат: {sub_p3d}")
+mul_p3d = p3d1 * p3d2
+print(f"Умножение: {mul_p3d}")
+truediv_p3d = p3d1 / p3d2
+print(f"Умножение: {truediv_p3d}")
+eq_p3d = p3d1 == p3d2
+print(f"Равенство координат: {eq_p3d}")
