@@ -64,7 +64,7 @@ class Clock:
 
 
 c1 = Clock(600)
-c2 = Clock(250)
+c2 = Clock(200)
 print(f"c1: {c1.get_format_time()}")  # 1
 # print(c2.get_format_time())
 c3 = c1 - c2
@@ -77,12 +77,9 @@ c6 = c1 % c2
 print(f"c1 % c2: {c6.get_format_time()}")  # 5
 c1 -= c2
 print(f"c1 -= c2: {c1.get_format_time()}")  # 6
-c1 = Clock(600)
 c1 *= c2
 print(f"c1 *= c2: {c1.get_format_time()}")  # 7
-c1 = Clock(600)
 c1 //= c2
 print(f"c1 //= c2: {c1.get_format_time()}")  # 8
-c1 = Clock(600)
 c1 %= c2
 print(f"c1 %= c2: {c1.get_format_time()}")  # 9
