@@ -13,25 +13,6 @@ class Point3D:
         self.__y = y
         self.__z = z
 
-    def get_format_coords(self):
-        z = self.__z
-        y = self.__y
-        x = self.__x
-        return f"{Point3D.__get_form(x)}, {Point3D.__get_form(y)}, {Point3D.__get_form(z)}"
-
-    @staticmethod
-    def __get_form(x):
-        return str(x)
-
-    def get_x(self):
-        return self.__x
-
-    def get_y(self):
-        return self.__y
-
-    def get_z(self):
-        return self.__z
-
     def __add__(self, other):
         if not isinstance(other, Point3D):
             raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
@@ -60,7 +41,45 @@ class Point3D:
         if not isinstance(other, Point3D):
             raise ArithmeticError("Правый Операнд Должен Быть Типом Point3D")
 
-        return self.__x == other.__x  # , self.__y == other.__y, self.__z == other.__z
+        print(f"Равенство координат: {[self.__x, self.__y, self.__z] == [other.__x, other.__y, other.__z]}")
+        print(f"x = {self.__x} x1 = {other.__x}")
+        print(f"y = {self.__y} y1 = {other.__y}")
+        print(f"z = {self.__x} z1 = {other.__z}")
+
+    def get_format_coords(self):
+        z = self.__z
+        y = self.__y
+        x = self.__x
+        return f"{Point3D.__get_form(x)}, {Point3D.__get_form(y)}, {Point3D.__get_form(z)}"
+
+    @staticmethod
+    def __get_form(x):
+        return str(x)
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        self.__x = x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        self.__y = y
+
+    @property
+    def z(self):
+        return self.__z
+
+    @z.setter
+    def z(self, z):
+        self.__z = z
+
 
 p3d1 = Point3D(12, 15, 18)
 p3d2 = Point3D(6, 3, 9)
@@ -75,4 +94,5 @@ print(f"Умножение: {mul_p3d}")
 truediv_p3d = p3d1 / p3d2
 print(f"Умножение: {truediv_p3d}")
 eq_p3d = p3d1 == p3d2
-print(f"Равенство координат: {eq_p3d}")
+x = 10
+print(f"Запись значения в координату x: {x}")
