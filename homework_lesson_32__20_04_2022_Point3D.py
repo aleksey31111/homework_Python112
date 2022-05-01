@@ -2,7 +2,7 @@
 print("Задание: Класс Point3D (x, y, z)\n"
       "\t1 - Перегрузка Операторов Сложения, Вычитания, Умножения и Деления.\n"
       "\t2 - Сравнение Координат мужду собой И Запись/Считывание Значений через Ключи:\"x\",\"y\",\"z\"")
-
+print()
 
 class Point3D:
     def __init__(self, x: int, y: int, z: int):
@@ -44,41 +44,41 @@ class Point3D:
         print(f"Равенство координат: {[self.__x, self.__y, self.__z] == [other.__x, other.__y, other.__z]}")
         print(f"x = {self.__x} x1 = {other.__x}")
         print(f"y = {self.__y} y1 = {other.__y}")
-        print(f"z = {self.__x} z1 = {other.__z}")
+        print(f"z = {self.__z} z1 = {other.__z}")
 
     def get_format_coords(self):
-        z = self.__z
-        y = self.__y
         x = self.__x
+        y = self.__y
+        z = self.__z
         return f"{Point3D.__get_form(x)}, {Point3D.__get_form(y)}, {Point3D.__get_form(z)}"
 
     @staticmethod
-    def __get_form(x):
-        return str(x)
+    def __get_form(a):
+        return str(a)
 
     @property
     def x(self):
         return self.__x
 
     @x.setter
-    def x(self, x):
-        self.__x = x
+    def x(self, value):
+        self.__x = value
 
     @property
     def y(self):
         return self.__y
 
     @y.setter
-    def y(self, y):
-        self.__y = y
+    def y(self, value):
+        self.__y = value
 
     @property
     def z(self):
         return self.__z
 
     @z.setter
-    def z(self, z):
-        self.__z = z
+    def z(self, value):
+        self.__z = value
 
 
 p3d1 = Point3D(12, 15, 18)
@@ -92,7 +92,9 @@ print(f"Вычитание координат: {sub_p3d}")
 mul_p3d = p3d1 * p3d2
 print(f"Умножение: {mul_p3d}")
 truediv_p3d = p3d1 / p3d2
-print(f"Умножение: {truediv_p3d}")
+print(f"Деление: {truediv_p3d}")
 eq_p3d = p3d1 == p3d2
-x = 10
-print(f"Запись значения в координату x: {x}")
+p3d1.x = 20
+print(f"Запись значения в координату x: {p3d1.x}")
+# print(p3d1.__dict__)
+
