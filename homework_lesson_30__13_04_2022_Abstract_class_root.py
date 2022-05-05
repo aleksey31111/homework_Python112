@@ -28,14 +28,8 @@ class Root(ABC):
 
     @abstractmethod
     def print_root_equation(self):
-        # raise NotImplementedError("В дочернем классе должен быть определен Метод print_root_linear_equation()")
         pass
 
-        # @abstractmethod
-        # def print_root_quadratic_equation(self):
-        raise NotImplementedError("В дочернем классе должен быть определен Метод print_root_quadratic_equation()")
-        # pass
-        pass
 
 class Linear(Root):  # 3x +7 = 0
     def calc_root_equation(self):
