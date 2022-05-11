@@ -7,7 +7,7 @@ print("Создать Класс Прямоугольник, Свойства - 
       "\t Вывод Информации о Фигуре.")
 print()
 
-from rectangle_and_cylinder import *
+from rectangle_and_cylinder_34 import *
 
 c1 = cylinder.Cylinder(5, 9, 10)
 # c1.cylinder_info()
