@@ -1,17 +1,22 @@
 ### TASK 1 Lesson 34 Rectangle ###
-class Rectangle:
-    def __init__(self, ab, bc):
-        if not isinstance(ab, int) or not isinstance(bc, int):
-            self.ab = ab
-            self.bc = bc
-            # self.cd = cd
-            # self.da = da
+from abc import ABC, abstractmethod
 
-    def rect_per(self):
+
+class Rectangle(ABC):
+    def __init__(self, ab, bc):
+        self.ab = ab
+        self.bc = bc
+
+    def perimetr(self):
         return self.ab * 2 + self.bc * 2
 
-    def rect_square(self):
+    def volume(self):
         return self.ab * self.bc
+
+    @abstractmethod
+    def info(self):
+        # return f"Периметр: {self.perimetr()}"
+        pass
 
 
 __author__ = "Алексей"

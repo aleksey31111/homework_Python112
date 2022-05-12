@@ -9,19 +9,21 @@ print()
 
 from rectangle_and_cylinder_34 import *
 
-c1 = cylinder.Cylinder(5, 9, 10)
-# c1.cylinder_info()
-c2 = cylinder.Cylinder(2, 3, 1)
-# c2.cylinder_info()
-c3 = cylinder.Cylinder(1, 2, 3)
-# c3.cylinder_info()
-# c4 = cylinder.Cylinder(4, 4, 2)
-# c4.cylinder_info()
-for cil in [c1, c2, c3]:
-    print(cil.cylinder_info_length_cycle_of_base())
-for cic in [c1, c2, c3]:
-    print(cic.cylinder_info_circle_square_of_base())
-for cip in [c1, c2, c3]:
-    print(cip.cylinder_info_surface_perimeter())
-for cisv in [c1, c2, c3, ]:
-    print(cisv.cylinder_infocircle_square_of_base_and_volume())
+rc1 = cylinder.Cylinder(2, 3, 5, 9)
+rc2 = cylinder.Cylinder(6, 7, 2, 3)
+rc3 = cylinder.Cylinder(1, 2, 6, 4)
+rc4 = cylinder.Cylinder(4, 4, 2, 2)
+list_rc = [rc1, rc2, rc3, rc4]
+for rci in list_rc:
+    print(rci.info())
+
+print('***' * 30)
+
+list_radius = [rc1.base_radius, rc2.base_radius, rc3.base_radius, rc4.base_radius]
+print(f"Окружность с наибольшей площадью: Радиус: {max(list_radius)}")
+
+list_perimetr = [rc1.perimetr(), rc2.perimetr(), rc3.perimetr(), rc4.perimetr()]
+# print(min(list_perimetr))
+print(f"Прямоугольник с наименьшим периметром: Стороны: {rc3.ab}, {rc3.bc}")
+
+print(f"Средний объем всех цилиндров: {round((rc1.volume() + rc2.volume() + rc3.volume() + rc4.volume()) / 4, 2)}")

@@ -9,32 +9,27 @@ class Cylinder(rectangle.Rectangle):
     radius = verify_side_radius_34.verify_cylinder_radius.Verify_cylinder_radius()
     ab = verify_side_radius_34.verify_rectangle_side.Verify_rectangle_side()
     bc = verify_side_radius_34.verify_rectangle_side.Verify_rectangle_side()
-    def __init__(self, ab, bc, radius):  # , base, height):
+
+    def __init__(self, ab, bc, base_radius, height):
         super().__init__(ab, bc)
-        self.ab = ab
-        self.bc = bc
-        self.radius = radius
+        self.base_radius = base_radius
+        self.height = height
 
-    def volume_cylinder(self):
+    def perimetr(self):
+        super().perimetr()
+        return self.bc * 2 + self.bc * 2
+
+    def volume(self):
         # return pi * pow(self.radius, 2) * self.bc
-        return pi * pow(self.radius, 2) * self.bc
+        return pi * pow(self.base_radius, 2) * self.height
 
-    def cylinder_info_length_cycle_of_base(self):
-        return (f"Длинна окружности: {round(self.ab * pi, 2)}")
-
-    def cylinder_info_circle_square_of_base(self):
-        return (f"Площадь круга: {round(2 * pi * pow(self.radius, 2), 2)}")
-
-    def cylinder_info_surface_perimeter(self):
-        return (f"Периметр: {round(pi * pow(self.radius, 2), 2)}")
-
-    def cylinder_infocircle_square_of_base_and_volume(self):
-        return (f"Площадь круга: {round(2 * pi * pow(self.radius, 2), 2)}\n"
-        f"Объем: {round(self.volume_cylinder(), 2)}")
+    def info(self):
+        return (f"Длинна окружности: {round(2 * pi * self.base_radius)}\n"
+                f"Периметр: {self.perimetr()}\n"
+                f"Площадь круга: {round(2 * pi * pow(self.base_radius, 2), 2)}\n"
+                f"Объем: {round(self.volume(), 2)}")
 
 
 __author__ = "啊勒克萨雅"
 if __name__ == "__main__":
     print(f"Модуль {__name__} (Автор: {__author__})")
-# c1 = Cylinder(5, 9, 10)
-# c1.cylinder_info()
