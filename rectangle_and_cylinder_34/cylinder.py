@@ -25,10 +25,11 @@ class Cylinder(rectangle.Rectangle):
         return pi * pow(self.base_radius, 2) * self.height
 
     def info(self):
-        return (f"Длинна окружности: {round(2 * pi * self.base_radius)}\n"
-                f"Периметр: {self.perimetr()}\n"
-                f"Площадь круга: {round(2 * pi * pow(self.base_radius, 2), 2)}\n"
-                f"Объем: {round(self.volume(), 2)}")
+        return (
+            # f"Длинна окружности: {round(2 * pi * self.base_radius)}\n"
+            #         f"Периметр: {self.perimetr()}\n"
+            f"Площадь круга: {round(2 * pi * pow(self.base_radius, 2), 2)}\n"
+            f"Объем: {round(self.volume(), 2)}")
 
 
 __author__ = "啊勒克萨雅"

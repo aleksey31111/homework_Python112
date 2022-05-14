@@ -13,8 +13,9 @@ class Rectangle(ABC):
         self.ab = ab
         self.bc = bc
 
+    @abstractmethod
     def perimetr(self):
-        return self.ab * 2 + self.bc * 2
+        pass
 
     def volume(self):
         return self.ab * self.bc
