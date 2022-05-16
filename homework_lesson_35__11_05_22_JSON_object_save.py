@@ -3,61 +3,97 @@ import json
 
 print("Задание: \n"
       "Сохранить в Формате Объека(JSON)[Python(DICT)], \"Номер\":{\"name\": \"\",\"tel\": \"\"}")
+
 from random import choice
 
 
-def gen_tel_of_name_by_id():
-    jornal_id = ""
+def gen_dict():
+    id = ""
     name = ""
     tel = ''
 
     letters = f"abcdefghiklmnoprstwyz"
     nums = f"0123456789"
 
-    while len(jornal_id) != 10:
-        jornal_id += choice(nums)
+    while len(id) != 10:
+        id += choice(nums)
 
-    print(jornal_id)
+    # print(id)
 
     while len(name) != 7:
         name += choice(letters)
-    print(name)
+    #     print(name)
 
     while len(tel) != 10:
         tel += choice(nums)
-    print(tel)
+    #     print(tel)
 
-    worker = {
-        jornal_id: {
+    dict1 = {
+        id: {
             "name": name,
             "tel": tel
         }
     }
 
+    return dict1
+
+
+def write_json(personal_dict):
     try:
-        data_include_id_name_tel = json.load(open("dict_id_dict_name_tel_35hw.json"))
+        data = json.load(open("dict_35hw.json"))
     except FileNotFoundError:
-        data_include_id_name_tel = dict()
-    # data_include_id_name_tel.append(personal_dict)
-    data_include_id_name_tel.fromkeys(name, tel)
-    with open("dict_id_dict_name_tel_35hw.json") as fh_hw_35:
-        json.dump(data_include_id_name_tel, fh_hw_35, indent=3)
+        data = dict()
 
-    return worker
+    data.update(personal_dict)
+    with open("dict_35hw.json", 'w') as fh_hw_35:
+        json.dump(data, fh_hw_35, indent=3)
 
 
-# def write_json(personal_dict):
-    # try:
-    #     data_include_id_name_tel = json.load(open("dict_id_dict_name_tel_35hw.json"))
-    # except FileNotFoundError:
-    #     data_include_id_name_tel = dict()
-    # # data_include_id_name_tel.append(personal_dict)
-    # data_include_id_name_tel.setdefault(gen_tel_of_name_by_id.jornal_id)
-    # with open("dict_id_dict_name_tel_35hw.json") as fh_hw_35:
-    #     json.dump(data_include_id_name_tel, fh_hw_35, indent=3)
+for i in range(7):
+    write_json(gen_dict())
+
+with open("dict_35hw.json", "r") as fh_hw_35:
+    print(json.load(fh_hw_35))
+
+print("Variant 2")
 
 
-for inst_funcs in range(3):
-    gen_tel_of_name_by_id()
+def gen_dict2():
+    name = ""
+    tel = ''
 
-gen_tel_of_name_by_id()
+    letters = f"abcdefghiklmnoprstwyz"
+    nums = f"0123456789"
+
+    while len(name) != 7:
+        name += choice(letters)
+    #     print(name)
+
+    while len(tel) != 10:
+        tel += choice(nums)
+    #     print(tel)
+
+    dict2 = {
+        "name": name,
+        "tel": tel
+    }
+
+    return dict2, tel
+
+
+def write_json(personal_dict, num):
+    try:
+        data = json.load(open("dict_35_2hw.json"))
+    except FileNotFoundError:
+        data = dict()
+
+    data[num] = personal_dict
+    with open("dict_35_2hw.json", 'w') as fh_hw_35_2:
+        json.dump(data, fh_hw_35_2, indent=3)
+
+
+for i in range(7):
+    write_json(gen_dict2()[0], gen_dict2()[1])
+
+with open("dict_35_2hw.json", "r") as fh_hw_35_2:
+    print(json.load(fh_hw_35_2))
