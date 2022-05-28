@@ -1,4 +1,4 @@
-from homework_lesson_38__23_05_22_MVC_Pattern_for_movie_application import homework_38_controller
+from homework_38_controller import Controller
 
 
 def main():
