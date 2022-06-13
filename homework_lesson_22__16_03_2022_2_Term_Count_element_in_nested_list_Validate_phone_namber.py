@@ -17,18 +17,18 @@ names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill
 count = 0
 for el_list in names:
     if isinstance(el_list, list):
-        print(f"el_list: {el_list}")
+        pass
         for el_list1 in el_list:
             if isinstance(el_list1, list):
-                print(f"el_list1: {el_list1}")
+                pass
                 for el_list2 in el_list1:
                     if isinstance(el_list2, list):
-                        print(f"el_list2: {el_list}")
+                        pass
                     elif not isinstance(el_list2, list):
                         count += 1
             elif not isinstance(el_list1, list):
                 count += 1
     elif not isinstance(el_list, list):
         count += 1
-print(count)
+print(f"Подсчет итерационным способом: {count}")
 
