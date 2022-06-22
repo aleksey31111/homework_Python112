@@ -26,4 +26,4 @@ class Seller(Base):
 
     def __repr__(self):
         return f"Продавец (ФИО: {self.surname} {self.name} {self.patronymic})" \
-               f"По адресу: {self.Address}, Продает: {self.Product}, в количестве: {self.Col}, По цене: {self.Price}"
+               f"По адресу: {self.Place}, Продает: {self.Product}, в количестве: {self.Col}, По цене: {self.Price}"

@@ -65,21 +65,7 @@ for count_line in hw2:
 print(line, 'стр.')
 hw2.close()
 print()
-# with open(hw25_task2, 'r') as hw2:
-#     rd = hw2.readline()
-#     while rd != '':
-#         rd = hw2.readline()
-#         count_str += 1
-#         count_char = 0
-#         count_word = 0
-#         ld = hw2.read()
-#         while ld != '':
-#             if ld != ' ':
-#                 count_word += 1
-#
-#         count_char += 1
-#         print(f"{count_char} симв. {count_word} сл/ ", count_word)
-# print(f"Строка {count_str}")
+
 
 
 ### Task 3 ###
