@@ -1,0 +1,31 @@
+body{
+    background: greenyellow;
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: lightgray;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+.content{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.flash{
+    padding: 15px;
+}
+.flash.success{
+    border: 1px solid lightgrey;
+    background: lightgoldenrodyellow;
+}
+.flash.error{
+    border: 2px solid purple;
+    background: lightcoral;
+}
