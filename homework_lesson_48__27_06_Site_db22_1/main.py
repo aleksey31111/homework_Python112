@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = '5443d109810cff4cf27c1b69b0ede52abd1db3a86dbed1'
 #     {"name": "О создателях страницы", "url": "about_creators"},
 #     {"name": "Связь", "url": "bonds"}
 # ]
-app.config.update(dict(DATABASE=os.path.join(app.root_path, 'python_cours.db')))
+app.config.update(dict(DATABASE=os.path.join(app.root_path, 'article.db')))
 
 
 def connect_db():

@@ -14,10 +14,12 @@ body{
     margin-top: 0;
 }
 .content{
+    display: block;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 auto ;
     box-sizing: border-box;
+    padding: 5px;
+    
 }
 .flash{
     padding: 15px;
@@ -36,8 +38,8 @@ body{
     color: rgb(99, 43, 221);
 }
 ul{
-    display: flex;
-    justify-content: space-around;
+    display: flex; 
+    justify-content: space-between;
     list-style: none;
     background: rgb(210, 245, 206);
     padding: 5px;
@@ -45,10 +47,11 @@ ul{
     list-style: none;
     margin: 10;
 }
-li>p, li div{
-    margin: 10;
-    padding: 10;
+ul>li{
+    display: block;
 }
+
+
 p>a{
     text-decoration: none;
     color: brown;
