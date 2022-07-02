@@ -49,5 +49,4 @@ class FDataBase:
         except sqlite3.Error as e:
             ("Ошибка получения статьи из БД" + str(e))
 
-        return[]
-
+        return []
