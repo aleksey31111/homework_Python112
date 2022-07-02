@@ -8,11 +8,7 @@ DATABASE = '/tmp/article.db'
 DEBUG = True
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5443d109810cff4cf27c1b69b0ede52abd1db3a86dbed1'
-# menu = [
-#     {"name": "ЗаГлавная", "url": "home"},
-#     {"name": "О создателях страницы", "url": "about_creators"},
-#     {"name": "Связь", "url": "bonds"}
-# ]
+
 app.config.update(dict(DATABASE=os.path.join(app.root_path, 'article.db')))
 
 
@@ -47,21 +43,13 @@ def close_db(error):
 def home():
     db = get_db()
     dbase = FDataBase(db)
-    # print(url_for('home'))
     return render_template("home.html", title="ЗаГлавная",
                            menu=dbase.get_menu(),
                            posts=dbase.get_posts_anonce())
 
 
-# @app.route("/about_creators")
-# def about_creators():
-#     print(url_for("about_creators"))
-#     return render_template("about_creators.html", title="О создателях страницы", menu=menu)
-
-
 @app.route("/bonds", methods=["POST", "GET"])
 def bonds():
-    # print(url_for("bonds.html"))
     if request.method == 'POST':
         print(request.form)
         if len(request.form['username']) > 2:
@@ -77,11 +65,6 @@ def profile(username):
     if 'userLogged' not in session or session['userLogged'] != username:
         abort(401)
         return f"Пользователь: {username}"
-
-
-# @app.errorhandler(404)
-# def page_not_found(error):
-#     return render_template('page404.html', title="Страница Не Найдена", menu=dbase.get_menu())  # menu=menu)
 
 
 @app.route('/login', methods=['POST', 'GET'])
