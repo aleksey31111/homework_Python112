@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 import random
+from .models import  Author, Rule
 
 
 def home(request):
@@ -25,3 +25,13 @@ def password(request):
     for i in range(length):
         psw += random.choice(char)
     return render(request, 'generator/password.html', {'password': psw})
+
+
+def author(request):
+    pr_author = Author.object.all()
+    return render(request, 'generator/author.html', {'pr_author': pr_author})
+
+
+def rule(request):
+    pr_rule = Rule.object.all()
+    return render(request, 'generator/rule.html', {'pr_rule': pr_rule})

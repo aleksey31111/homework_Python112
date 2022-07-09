@@ -1,0 +1,21 @@
+{% extends 'author/base.html' %}
+
+{% block content %}
+
+<h1>Об авторе работы</h1>
+
+<div class="block">
+    {% for author in page_author %}
+    <div class="element">
+        <div class="text">
+            <p>Фамилия, Имя, Отчество: {{ author.fio }}</p>
+            <p>Дата рождения: {{ author.born_date}}</p>
+            <p>Адрес электронной почты: {{ author.email }}</p>
+            <p>Страна проживания: {{ author.country }}</p>
+            <p>Название проэкта: {{ author.name_project }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
