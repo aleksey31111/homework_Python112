@@ -1,0 +1,16 @@
+{% extends 'firstpage/base.html' %}}
+
+{% block content %}
+<h1>SecondPage</h1>
+
+{% for secondpage in secondpages %}
+<div class="element">
+    <h2 class="top">{{ secondpage.title}}</h2>
+    <div class="secondpage_text">
+        <h5>{{ secondpage.date }}</h5>
+        <p>{{ secondpage.description }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

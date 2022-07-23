@@ -27,7 +27,7 @@ def signupuser(request):
                                             password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('currenttodos')
+                return redirect('secondpage/secondpage.html')
             except IntegrityError:
                 return render(request, 'firstpage/signupuser.html',
                               {'form': UserCreationForm(),
@@ -41,7 +41,7 @@ def signupuser(request):
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('index.html')
+        return redirect('secondpage')
 
 def currenttodos(request):
     return render(request, 'firstpage/currenttodos.html')
