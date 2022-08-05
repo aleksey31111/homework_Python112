@@ -1,0 +1,26 @@
+base_blog - Кнопочеая пагинация
+<div>
+    <ul class="list-pages">
+        {% if page_obj.has_previous %}
+        <button><a class="page-num" href="?page=1">&laquo; первая</a></button>
+        <button><a class="page-num" href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+        </button>
+        {% endif %}
+
+        <button class="page-num page-num-selected">
+        {{ blog.paginate }}Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </button>
+
+        {% if page_obj.has_next %}
+        <button><a class="page-num" href="?page={{ page_obj.next_page_number }}">следующая</a></button>
+        <button><a class="page-num" href="?page={{ page_obj.paginator.num_pages }}">последняя
+        &raquo;</a></button>
+        {% endif %}
+    </ul>
+</div>
+
+<li class="page-num  page-num-selected">
+                                    {{ p }}</li>
+
+1dagwtl ^ ts - Виталий, Olga, igor, Василий,
+    Анатолий, Екатерина, Исаак, Петр, Владимир
