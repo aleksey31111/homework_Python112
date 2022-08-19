@@ -42,3 +42,6 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Firstpage, FirstpageAdmin)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category, CategoryAdmin)
+
+admin.site.site_header = "Админ-Панель: Firstpage, Secondpage, Blog"
+admin.site.site_title
