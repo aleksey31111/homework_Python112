@@ -1,0 +1,48 @@
+homework_lesson_61_Create_town_displayed_weather/templates/tatarstan/tatarstan.html
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrap">
+    <div class="block">
+        <div class="elem">
+            <h2>Погода в вашем городе</h2>
+
+            <form action="">
+                <input type="text" name="city" placeholder="Казань" class="city">
+                <br>
+                <input type="submit" name="send" value="Узнать" class="but">
+            </form>
+        </div>
+        <div class="elem">
+            <h2>Информация</h2>
+            <div class="info">
+                <p class="data">
+                    <b>Погода</b><br><br>
+                    <b>Температура</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+sixth-app/app/tatarstan/views.py:
+from django.shortcuts import render
+import requests
+
+def tatarstan(request):
+    app_id = '177f6d3726fc411f8bb183205222408'
+    city = 'Казань'
+    url = f"http://api.weatherapi.com/v1/current.json?key={app_id}&q={city}&aqi=no"
+    url_tatarstan = f"http://api.weatherapi.com/v1/forecast.json?key={app_id}&q={city}&aqi=no"
+    city_weather = requests.get(url_tatarstan)
+    city_weather_temperare =requests.get(url_tatarstan)
+    print(city_weather)
+    weather = {
+        'city': city,
+        'temperature': city_weather['main']['temp'],
+        'description': city_weather['weather'][0]['description'],
+        'icon': city_weather['weather'][0]['icon'],
+    }
+    context = {'weather': weather}
+    return render(request, template_name='tatarstan/tatarstan.html', context=context)

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Погодное приложение</h1>
+<h2>Информация</h2>
+<b>Город</b> {{ info.name }} <br>
+<b>Температура</b>{{ info.temp }} °C<br>
+<img src="{{ info.icon }}"
+     alt="Фото погоды">
+
+{% endblock %}
